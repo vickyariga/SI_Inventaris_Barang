@@ -10,8 +10,15 @@ class Opd extends Model
 
 	protected $guarded = [];
 
-    public function kantor()
+	protected $primaryKey = 'id_opd';
+
+	public $incrementing = 'false';
+
+	protected $keyType = 'string';
+
+    public function kantors()
     {
-    	return $this->belongsTo('App\Kantor');
+        return $this->hasMany(Kantor::class, 'id_opd', 'id_opd');
     }
+
 }

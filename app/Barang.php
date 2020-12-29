@@ -8,14 +8,7 @@ class Barang extends Model
 {
     protected $table = 'barang';
     protected $fillable = ['id_barang', 'nama_barang'];
+    public $incrementing = 'false';
+    protected $keyType = 'string';
 
-    public function barangKantor()
-    {
-    	return $this->hasMany('App\BarangKantor');
-    }
-
-    public function kantor()
-    {
-    	return $this->belongsToMany('App\Kantor', 'barang_kantor');
-    }
 }

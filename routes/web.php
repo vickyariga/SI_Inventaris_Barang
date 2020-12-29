@@ -100,7 +100,7 @@ Route::get('/laporan', 'LaporanController@index')->name('laporan');
 //Route::get('/laporan', 'LaporansController@index')->name('laporan');
 
 //opd
-Route::get('/opd', 'OpdController@index')->name('opd');
+Route::resource('opd' ,OpdController::class)->only('index');
 Route::get('/info1', 'Info1Controller@index')->name('info1');
 Route::get('/info2', 'Info2Controller@index')->name('info2');
 Route::get('/info3', 'Info3Controller@index')->name('info3');
@@ -109,3 +109,7 @@ Route::get('/info5', 'Info5Controller@index')->name('info5');
 
 //grafik
 Route::get('/grafik', 'GrafikController@index')->name('grafik');
+
+//nested Kantor
+Route::resource('opd.kantor', OrganisasiKantorController::class)->only('index', 'show');
+
