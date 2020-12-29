@@ -113,3 +113,6 @@ Route::get('/grafik', 'GrafikController@index')->name('grafik');
 //nested Kantor
 Route::resource('opd.kantor', OrganisasiKantorController::class)->only('index', 'show');
 
+//nested barang di kantor
+Route::resource('opd.kantor.barang', KantorBarangController::class)->except('index', 'show');
+

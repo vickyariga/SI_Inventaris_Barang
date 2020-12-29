@@ -12,7 +12,7 @@ class OrganisasiKantorController extends Controller
     {
         $kantors = Opd::find($id)->kantors;
 
-        return view('kantor' , compact('kantors'));
+        return view('kantor' , compact('kantors', 'id'));
     }
 
     public function show($idOpd, $idKantor)
@@ -21,7 +21,7 @@ class OrganisasiKantorController extends Controller
         $data = Kantor::find($idKantor)->barangs;
 
 
-        return view('barang', compact('data'));
+        return view('barang', compact('data', 'idOpd', 'idKantor'));
     }
 
 
