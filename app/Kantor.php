@@ -20,4 +20,8 @@ class Kantor extends Model
     {
         return $this->hasMany(Barang::class, 'id_kantor', 'id_kantor');
     }
+
+    public function opd(){
+        return $this->belongsTo(Opd::class, 'id_opd', 'id_opd');
+    }
 }
