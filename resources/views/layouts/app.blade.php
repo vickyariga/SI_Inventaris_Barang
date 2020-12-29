@@ -97,7 +97,7 @@
             </div>
         </nav>
         @include('layouts.sidebar')
-            @yield('content')
+        @yield('content')
     </div>
 </body>
 </html>
