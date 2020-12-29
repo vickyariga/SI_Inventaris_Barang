@@ -9,13 +9,15 @@ class Kantor extends Model
     protected $table = 'kantor';
     protected $fillable = ['id_kantor', 'id_opd', 'nama_kantor', 'alamat', 'telp', 'email', 'website'];
 
-    /*public function barangKantor()
-    {
-    	return $this->hasMany('App\BarangKantor');
-    }*/                                                                                     
+    protected $primaryKey = 'id_kantor';
 
-    public function barang()
+    public $incrementing = 'false';
+
+    protected $keyType = 'string';
+
+
+    public function barangs()
     {
-    	return $this->belongsToMany('App\Barang');
+        return $this->hasMany(Barang::class, 'id_kantor', 'id_kantor');
     }
 }
